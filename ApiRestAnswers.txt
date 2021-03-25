@@ -1,0 +1,33 @@
+A) Para poder integrar los nuevos requerimientos a traves de una Api Rest, es necesario crear una carpeta llamada "api", donde tendremos la
+vista de la api, es decir, el archivo que se encargara de mostrar en formato json (usando la function json_encode()) lo que retorne la api. 
+Ademas se necesita minimo un controlador el cual se encargara de poder obtener datos que se le envien a la api 
+(usando la funcion file_get_contents("php://input")) y decodificarlo con la funcion json_decode() para poder procesar esa informacion y enviarla
+a traves del model indicado a la base de datos.
+
+B)
+
+1) ENDPOINT: "api/clientes/id"
+METODO HTTP: GET
+CONTROLADOR: ApiClienteController.php
+METODO: getCliente($params = null);
+
+2) ENDPOINT: "api/clientes/id"
+METODO HTTP: PUT
+CONTROLADOR: ApiClienteController.php
+METODO: editCliente($params = null);
+
+3) ENDPOINT: "api/clientes/id/cuentas"
+METODO HTTP: GET
+CONTROLADOR: ApiCuentaController.php
+METODO: getCuentasDelCliente($params = null);
+
+4) ENDPOINT: "api/cuentas/id"
+METODO HTTP: GET
+CONTROLADOR: ApiCuentaController.php
+METODO: getCuenta($params = null);
+
+5) ENDPOINT: "api/cliente/id/operaciones/fecha1/fecha2"
+METODO HTTP: GET
+CONTROLADOR: ApiOperacionesController.php
+METODO: getOperacionesFecha($params = null);
+
